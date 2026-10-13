@@ -1,0 +1,9 @@
+{
+	"name": "brewletter",
+	"private": true,
+	"dependencies": {
+		"@vueuse/core": "^14.4.0",
+		"ace-builds": "^1.36.2",
+		"marked": "^15.0.6"
+	}
+}

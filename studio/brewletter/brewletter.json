@@ -1,0 +1,16 @@
+{
+ "app_home": "page-9eb00be5",
+ "app_name": "brewletter",
+ "app_title": "Brewletter",
+ "creation": "2025-02-06 07:35:48.133109",
+ "docstatus": 0,
+ "doctype": "Studio App",
+ "frappe_app": "brewletter",
+ "idx": 1,
+ "is_standard": 1,
+ "modified": "2026-10-13 11:20:57.026556",
+ "modified_by": "Administrator",
+ "name": "brewletter",
+ "owner": "Administrator",
+ "route": "brewletter"
+}

@@ -1,0 +1,1049 @@
+{
+ "allow_guest": 0,
+ "blocks": [
+  {
+   "baseStyles": {
+    "alignItems": "center",
+    "display": "flex",
+    "flexDirection": "column",
+    "flexShrink": 0,
+    "flexWrap": "wrap",
+    "overflowX": "hidden",
+    "width": "inherit"
+   },
+   "blockName": "div",
+   "children": [
+    {
+     "baseStyles": {
+      "display": "flex",
+      "flexDirection": "row",
+      "flexGrow": 1,
+      "flexShrink": 0,
+      "height": "100vh",
+      "width": "100%"
+     },
+     "blockName": "Container",
+     "children": [
+      {
+       "blockName": "Sidebar",
+       "children": [
+        {
+         "componentId": "SidebarHeader-5bae4167e",
+         "componentName": "SidebarHeader",
+         "componentProps": {
+          "title": "Brewletter"
+         }
+        },
+        {
+         "baseStyles": {
+          "display": "flex",
+          "flex": "1",
+          "flexDirection": "column",
+          "minHeight": "0px",
+          "overflowY": "auto",
+          "padding": "4px 8px"
+         },
+         "children": [
+          {
+           "componentId": "SidebarItem-29b52adca",
+           "componentName": "SidebarItem",
+           "componentProps": {
+            "icon": "lucide-mail",
+            "label": "Newsletters",
+            "route": "/"
+           }
+          },
+          {
+           "componentId": "SidebarItem-4c7cdadf9",
+           "componentName": "SidebarItem",
+           "componentProps": {
+            "icon": "lucide-user-check",
+            "label": "Subscribers",
+            "route": "/subscribers"
+           }
+          }
+         ],
+         "componentId": "container-d6ea7f96d",
+         "componentName": "container",
+         "originalElement": "div"
+        }
+       ],
+       "componentId": "Sidebar-1c06a71bc",
+       "componentName": "Sidebar"
+      },
+      {
+       "baseStyles": {
+        "display": "flex",
+        "flexDirection": "column",
+        "flexShrink": 1,
+        "height": "100%",
+        "minWidth": "0px",
+        "width": "100%"
+       },
+       "blockName": "Container",
+       "children": [
+        {
+         "baseStyles": {
+          "alignItems": "center",
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px, rgba(0, 0, 0, 0.05) 0px 1px 3px 0px",
+          "display": "flex",
+          "flexDirection": "row",
+          "flexShrink": 0,
+          "height": "49px",
+          "padding": "15px",
+          "width": "100%"
+         },
+         "blockName": "Container",
+         "children": [
+          {
+           "baseStyles": {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "row",
+            "gap": "10px",
+            "gridTemplateColumns": "repeat(2, minmax(200px, 1fr))",
+            "justifyContent": "center"
+           },
+           "blockName": "FitContainer",
+           "children": [
+            {
+             "blockName": "TextBlock",
+             "classes": [
+              "font-normal"
+             ],
+             "componentId": "TextBlock-h9u3z2v3k",
+             "componentName": "TextBlock",
+             "componentProps": {
+              "fontSize": "text-2xl",
+              "fontWeight": "font-normal",
+              "text": "Newsletter"
+             },
+             "componentSlots": {}
+            },
+            {
+             "baseStyles": {
+              "margin": "2px"
+             },
+             "blockName": "Badge",
+             "componentId": "Badge-7e6mhqld2",
+             "componentName": "Badge",
+             "componentProps": {
+              "label": "{{ newsletter.doc.status }}",
+              "size": "sm",
+              "theme": "{{ newsletter.doc.status == \"Not Sent\" ? \"red\" : \"green\" }}",
+              "variant": "subtle"
+             },
+             "componentSlots": {},
+             "visibilityCondition": "newsletter.doc"
+            }
+           ],
+           "componentId": "FitContainer-rt2p43tcj",
+           "componentName": "container",
+           "componentProps": {},
+           "componentSlots": {},
+           "originalElement": "div"
+          },
+          {
+           "baseStyles": {
+            "display": "flex",
+            "flexDirection": "row",
+            "gap": "10px",
+            "justifyContent": "space-between",
+            "marginBottom": "0px",
+            "marginLeft": "auto",
+            "marginRight": "0px",
+            "marginTop": "0px"
+           },
+           "blockName": "FitContainer",
+           "children": [
+            {
+             "blockName": "Button",
+             "componentEvents": {
+              "click": {
+               "action": "Run Script",
+               "event": "click",
+               "script": "sendNow()"
+              }
+             },
+             "componentId": "Button-xml7ie047",
+             "componentName": "Button",
+             "componentProps": {
+              "iconLeft": "lucide-send",
+              "label": "Send Now",
+              "variant": "subtle"
+             },
+             "componentSlots": {},
+             "visibilityCondition": "newsletter.doc"
+            },
+            {
+             "blockName": "Button",
+             "componentEvents": {
+              "click": {
+               "action": "Run Script",
+               "event": "click",
+               "script": "save()"
+              }
+             },
+             "componentId": "Button-38mnfzecl",
+             "componentName": "Button",
+             "componentProps": {
+              "iconLeft": "",
+              "label": "Save",
+              "variant": "solid"
+             },
+             "componentSlots": {}
+            }
+           ],
+           "componentId": "FitContainer-qta6833uj",
+           "componentName": "container",
+           "componentProps": {},
+           "componentSlots": {},
+           "originalElement": "div"
+          }
+         ],
+         "componentId": "Container-tetc007ke",
+         "componentName": "container",
+         "componentProps": {},
+         "componentSlots": {},
+         "originalElement": "div"
+        },
+        {
+         "baseStyles": {
+          "display": "flex",
+          "flexDirection": "column",
+          "flexShrink": 1,
+          "gap": "20px",
+          "gridTemplateColumns": "repeat(2, minmax(200px, 1fr))",
+          "height": "100%",
+          "overflowX": "auto",
+          "overflowY": "scroll",
+          "paddingBottom": "20px",
+          "paddingLeft": "120px",
+          "paddingRight": "120px",
+          "paddingTop": "20px",
+          "width": "100%"
+         },
+         "blockName": "FitContainer",
+         "children": [
+          {
+           "baseStyles": {
+            "display": "flex",
+            "flexDirection": "row",
+            "gap": "20px",
+            "marginBottom": "16px",
+            "width": "100%"
+           },
+           "blockName": "FitContainer",
+           "children": [
+            {
+             "baseStyles": {
+              "borderColor": "#F8F8F8",
+              "borderRadius": "5px",
+              "borderStyle": "solid",
+              "borderWidth": "1px",
+              "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px, rgba(0, 0, 0, 0.05) 0px 1px 3px 0px",
+              "display": "flex",
+              "flexDirection": "column",
+              "flexShrink": 0,
+              "height": "76px",
+              "marginBottom": "5px",
+              "padding": "10px",
+              "width": "190px"
+             },
+             "blockName": "Container",
+             "children": [
+              {
+               "blockName": "TextBlock",
+               "classes": [
+                "font-medium"
+               ],
+               "componentId": "TextBlock-2kk5ah1u9",
+               "componentName": "TextBlock",
+               "componentProps": {
+                "fontSize": "text-base",
+                "fontWeight": "font-medium",
+                "text": "Total Recipients"
+               },
+               "componentSlots": {}
+              },
+              {
+               "blockName": "TextBlock",
+               "classes": [
+                "text-gray-700",
+                "font-normal"
+               ],
+               "componentId": "TextBlock-3zbj3q6ua",
+               "componentName": "TextBlock",
+               "componentProps": {
+                "fontSize": "text-2xl",
+                "fontWeight": "font-normal",
+                "text": "{{ newsletter.doc.total_recipients }}",
+                "textColor": "text-gray-700"
+               },
+               "componentSlots": {}
+              }
+             ],
+             "componentId": "Container-t8ksloryh",
+             "componentName": "container",
+             "componentProps": {},
+             "componentSlots": {},
+             "originalElement": "div"
+            },
+            {
+             "baseStyles": {
+              "borderColor": "#F8F8F8",
+              "borderRadius": "5px",
+              "borderStyle": "solid",
+              "borderWidth": "1px",
+              "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px, rgba(0, 0, 0, 0.05) 0px 1px 3px 0px",
+              "display": "flex",
+              "flexDirection": "column",
+              "flexShrink": 0,
+              "height": "76px",
+              "marginBottom": "5px",
+              "padding": "10px",
+              "width": "190px"
+             },
+             "blockName": "Container",
+             "children": [
+              {
+               "blockName": "TextBlock",
+               "classes": [
+                "font-medium"
+               ],
+               "componentId": "TextBlock-yhl5c0o5r",
+               "componentName": "TextBlock",
+               "componentProps": {
+                "fontSize": "text-base",
+                "fontWeight": "font-medium",
+                "text": "Total Views"
+               },
+               "componentSlots": {}
+              },
+              {
+               "blockName": "TextBlock",
+               "classes": [
+                "text-gray-700",
+                "font-normal"
+               ],
+               "componentId": "TextBlock-kybscex7b",
+               "componentName": "TextBlock",
+               "componentProps": {
+                "fontSize": "text-2xl",
+                "fontWeight": "font-normal",
+                "text": "{{ newsletter.doc.total_views }}",
+                "textColor": "text-gray-700"
+               },
+               "componentSlots": {}
+              }
+             ],
+             "componentId": "Container-zlyzyu913",
+             "componentName": "container",
+             "componentProps": {},
+             "componentSlots": {},
+             "originalElement": "div"
+            },
+            {
+             "baseStyles": {
+              "borderColor": "#F8F8F8",
+              "borderRadius": "5px",
+              "borderStyle": "solid",
+              "borderWidth": "1px",
+              "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px, rgba(0, 0, 0, 0.05) 0px 1px 3px 0px",
+              "display": "flex",
+              "flexDirection": "column",
+              "flexShrink": 0,
+              "height": "76px",
+              "marginBottom": "5px",
+              "marginLeft": "0px",
+              "marginRight": "0px",
+              "marginTop": "0px",
+              "padding": "10px",
+              "width": "190px"
+             },
+             "blockName": "Container",
+             "children": [
+              {
+               "blockName": "TextBlock",
+               "classes": [
+                "font-medium"
+               ],
+               "componentId": "TextBlock-tn79mz3z9",
+               "componentName": "TextBlock",
+               "componentProps": {
+                "fontSize": "text-base",
+                "fontWeight": "font-medium",
+                "text": "View Rate"
+               },
+               "componentSlots": {}
+              },
+              {
+               "blockName": "TextBlock",
+               "classes": [
+                "text-gray-700",
+                "font-normal"
+               ],
+               "componentId": "TextBlock-vyjcl6jai",
+               "componentName": "TextBlock",
+               "componentProps": {
+                "fontSize": "text-2xl",
+                "fontWeight": "font-normal",
+                "text": "{{ newsletter.doc.view_rate }}%",
+                "textColor": "text-gray-700"
+               },
+               "componentSlots": {}
+              }
+             ],
+             "componentId": "Container-4w8d97quq",
+             "componentName": "container",
+             "componentProps": {},
+             "componentSlots": {},
+             "originalElement": "div"
+            }
+           ],
+           "componentId": "FitContainer-o8ur3vnkq",
+           "componentName": "container",
+           "componentProps": {},
+           "componentSlots": {},
+           "originalElement": "div",
+           "visibilityCondition": "newsletter.doc"
+          },
+          {
+           "blockName": "FormControl",
+           "componentId": "FormControl-glfxk3tiv",
+           "componentName": "FormControl",
+           "componentProps": {
+            "autocomplete": "off",
+            "label": "Subject",
+            "modelValue": {
+             "$type": "variable",
+             "name": "formData.subject"
+            },
+            "placeholder": "What is this newsletter about?",
+            "required": false,
+            "size": "sm",
+            "type": "textarea"
+           },
+           "componentSlots": {}
+          },
+          {
+           "blockName": "MarkdownEditor",
+           "componentId": "MarkdownEditor-iduec9j23",
+           "componentName": "MarkdownEditor",
+           "componentProps": {
+            "label": "Content",
+            "modelValue": {
+             "$type": "variable",
+             "name": "formData.content"
+            },
+            "showPreview": true
+           },
+           "componentSlots": {},
+           "isCustomVueComponent": true
+          },
+          {
+           "blockName": "FormControl",
+           "componentId": "FormControl-rr0vdh8le",
+           "componentName": "FormControl",
+           "componentProps": {
+            "autocomplete": "off",
+            "description": "",
+            "label": "Schedule sending at a later time",
+            "modelValue": {
+             "$type": "variable",
+             "name": "formData.schedule_sending"
+            },
+            "type": "checkbox"
+           },
+           "componentSlots": {}
+          },
+          {
+           "blockName": "FormControl",
+           "componentId": "FormControl-lf8r03t54",
+           "componentName": "FormControl",
+           "componentProps": {
+            "autocomplete": "off",
+            "label": "Send Email At",
+            "modelValue": {
+             "$type": "variable",
+             "name": "formData.send_email_at"
+            },
+            "type": "datetime-local"
+           },
+           "componentSlots": {},
+           "visibilityCondition": "formData.schedule_sending == true"
+          }
+         ],
+         "componentId": "FitContainer-g4uynasas",
+         "componentName": "container",
+         "componentProps": {},
+         "componentSlots": {},
+         "originalElement": "div"
+        }
+       ],
+       "componentId": "Container-099i8n2si",
+       "componentName": "container",
+       "componentProps": {},
+       "componentSlots": {},
+       "originalElement": "div"
+      }
+     ],
+     "componentId": "Container-6pg85mlsx",
+     "componentName": "container",
+     "componentProps": {},
+     "componentSlots": {},
+     "originalElement": "div"
+    }
+   ],
+   "componentId": "root",
+   "componentName": "div",
+   "componentProps": {},
+   "componentSlots": {},
+   "originalElement": "body"
+  }
+ ],
+ "creation": "2025-02-06 09:41:53.864332",
+ "docstatus": 0,
+ "doctype": "Studio Page",
+ "draft_blocks": [
+  {
+   "baseStyles": {
+    "alignItems": "center",
+    "display": "flex",
+    "flexDirection": "column",
+    "flexShrink": 0,
+    "flexWrap": "wrap",
+    "overflowX": "hidden",
+    "width": "inherit"
+   },
+   "blockName": "div",
+   "children": [
+    {
+     "baseStyles": {
+      "display": "flex",
+      "flexDirection": "row",
+      "flexGrow": 1,
+      "flexShrink": 0,
+      "height": "100vh",
+      "width": "100%"
+     },
+     "blockName": "Container",
+     "children": [
+      {
+       "blockName": "Sidebar",
+       "children": [
+        {
+         "componentId": "SidebarHeader-0409fc0ef",
+         "componentName": "SidebarHeader",
+         "componentProps": {
+          "title": "Brewletter"
+         }
+        },
+        {
+         "baseStyles": {
+          "display": "flex",
+          "flex": "1",
+          "flexDirection": "column",
+          "minHeight": "0px",
+          "overflowY": "auto",
+          "padding": "4px 8px"
+         },
+         "children": [
+          {
+           "componentId": "SidebarItem-91074dd29",
+           "componentName": "SidebarItem",
+           "componentProps": {
+            "icon": "lucide-mail",
+            "label": "Newsletters",
+            "route": "/"
+           }
+          },
+          {
+           "componentId": "SidebarItem-85ee24c7c",
+           "componentName": "SidebarItem",
+           "componentProps": {
+            "icon": "lucide-user-check",
+            "label": "Subscribers",
+            "route": "/subscribers"
+           }
+          }
+         ],
+         "componentId": "container-f93ab62e2",
+         "componentName": "container",
+         "originalElement": "div"
+        }
+       ],
+       "componentId": "Sidebar-66ed96d2d",
+       "componentName": "Sidebar"
+      },
+      {
+       "baseStyles": {
+        "display": "flex",
+        "flexDirection": "column",
+        "flexShrink": 1,
+        "height": "100%",
+        "minWidth": "0px",
+        "width": "100%"
+       },
+       "blockName": "Container",
+       "children": [
+        {
+         "baseStyles": {
+          "alignItems": "center",
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px, rgba(0, 0, 0, 0.05) 0px 1px 3px 0px",
+          "display": "flex",
+          "flexDirection": "row",
+          "flexShrink": 0,
+          "height": "49px",
+          "padding": "15px",
+          "width": "100%"
+         },
+         "blockName": "Container",
+         "children": [
+          {
+           "baseStyles": {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "row",
+            "gap": "10px",
+            "gridTemplateColumns": "repeat(2, minmax(200px, 1fr))",
+            "justifyContent": "center"
+           },
+           "blockName": "FitContainer",
+           "children": [
+            {
+             "blockName": "TextBlock",
+             "classes": [
+              "font-normal"
+             ],
+             "componentId": "TextBlock-h9u3z2v3k",
+             "componentName": "TextBlock",
+             "componentProps": {
+              "fontSize": "text-2xl",
+              "fontWeight": "font-normal",
+              "text": "Newsletter"
+             },
+             "componentSlots": {}
+            },
+            {
+             "baseStyles": {
+              "margin": "2px"
+             },
+             "blockName": "Badge",
+             "componentId": "Badge-7e6mhqld2",
+             "componentName": "Badge",
+             "componentProps": {
+              "label": "{{ newsletter.doc.status }}",
+              "size": "sm",
+              "theme": "{{ newsletter.doc.status == \"Not Sent\" ? \"red\" : \"green\" }}",
+              "variant": "subtle"
+             },
+             "componentSlots": {},
+             "visibilityCondition": "newsletter.doc"
+            }
+           ],
+           "componentId": "FitContainer-rt2p43tcj",
+           "componentName": "container",
+           "componentProps": {},
+           "componentSlots": {},
+           "originalElement": "div"
+          },
+          {
+           "baseStyles": {
+            "display": "flex",
+            "flexDirection": "row",
+            "gap": "10px",
+            "justifyContent": "space-between",
+            "marginBottom": "0px",
+            "marginLeft": "auto",
+            "marginRight": "0px",
+            "marginTop": "0px"
+           },
+           "blockName": "FitContainer",
+           "children": [
+            {
+             "blockName": "Button",
+             "componentEvents": {
+              "click": {
+               "action": "Run Script",
+               "event": "click",
+               "script": "sendNow()"
+              }
+             },
+             "componentId": "Button-xml7ie047",
+             "componentName": "Button",
+             "componentProps": {
+              "iconLeft": "lucide-send",
+              "label": "Send Now",
+              "variant": "subtle"
+             },
+             "componentSlots": {},
+             "visibilityCondition": "newsletter.doc"
+            },
+            {
+             "blockName": "Button",
+             "componentEvents": {
+              "click": {
+               "action": "Run Script",
+               "event": "click",
+               "script": "save()"
+              }
+             },
+             "componentId": "Button-38mnfzecl",
+             "componentName": "Button",
+             "componentProps": {
+              "disabled": false,
+              "iconLeft": "",
+              "label": "Save",
+              "loading": false,
+              "size": "sm",
+              "theme": "gray",
+              "type": "button",
+              "variant": "solid"
+             },
+             "componentSlots": {}
+            }
+           ],
+           "componentId": "FitContainer-qta6833uj",
+           "componentName": "container",
+           "componentProps": {},
+           "componentSlots": {},
+           "originalElement": "div"
+          }
+         ],
+         "componentId": "Container-tetc007ke",
+         "componentName": "container",
+         "componentProps": {},
+         "componentSlots": {},
+         "originalElement": "div"
+        },
+        {
+         "baseStyles": {
+          "display": "flex",
+          "flexDirection": "column",
+          "flexShrink": 1,
+          "gap": "20px",
+          "gridTemplateColumns": "repeat(2, minmax(200px, 1fr))",
+          "height": "100%",
+          "overflowX": "auto",
+          "overflowY": "scroll",
+          "paddingBottom": "20px",
+          "paddingLeft": "120px",
+          "paddingRight": "120px",
+          "paddingTop": "20px",
+          "width": "100%"
+         },
+         "blockName": "FitContainer",
+         "children": [
+          {
+           "baseStyles": {
+            "display": "flex",
+            "flexDirection": "row",
+            "gap": "20px",
+            "marginBottom": "16px",
+            "width": "100%"
+           },
+           "blockName": "FitContainer",
+           "children": [
+            {
+             "baseStyles": {
+              "borderColor": "#F8F8F8",
+              "borderRadius": "5px",
+              "borderStyle": "solid",
+              "borderWidth": "1px",
+              "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px, rgba(0, 0, 0, 0.05) 0px 1px 3px 0px",
+              "display": "flex",
+              "flexDirection": "column",
+              "flexShrink": 0,
+              "height": "76px",
+              "marginBottom": "5px",
+              "padding": "10px",
+              "width": "190px"
+             },
+             "blockName": "Container",
+             "children": [
+              {
+               "blockName": "TextBlock",
+               "classes": [
+                "font-medium"
+               ],
+               "componentId": "TextBlock-2kk5ah1u9",
+               "componentName": "TextBlock",
+               "componentProps": {
+                "fontSize": "text-base",
+                "fontWeight": "font-medium",
+                "text": "Total Recipients"
+               },
+               "componentSlots": {}
+              },
+              {
+               "blockName": "TextBlock",
+               "classes": [
+                "text-gray-700",
+                "font-normal"
+               ],
+               "componentId": "TextBlock-3zbj3q6ua",
+               "componentName": "TextBlock",
+               "componentProps": {
+                "fontSize": "text-2xl",
+                "fontWeight": "font-normal",
+                "text": "{{ newsletter.doc.total_recipients }}",
+                "textColor": "text-gray-700"
+               },
+               "componentSlots": {}
+              }
+             ],
+             "componentId": "Container-t8ksloryh",
+             "componentName": "container",
+             "componentProps": {},
+             "componentSlots": {},
+             "originalElement": "div"
+            },
+            {
+             "baseStyles": {
+              "borderColor": "#F8F8F8",
+              "borderRadius": "5px",
+              "borderStyle": "solid",
+              "borderWidth": "1px",
+              "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px, rgba(0, 0, 0, 0.05) 0px 1px 3px 0px",
+              "display": "flex",
+              "flexDirection": "column",
+              "flexShrink": 0,
+              "height": "76px",
+              "marginBottom": "5px",
+              "padding": "10px",
+              "width": "190px"
+             },
+             "blockName": "Container",
+             "children": [
+              {
+               "blockName": "TextBlock",
+               "classes": [
+                "font-medium"
+               ],
+               "componentId": "TextBlock-yhl5c0o5r",
+               "componentName": "TextBlock",
+               "componentProps": {
+                "fontSize": "text-base",
+                "fontWeight": "font-medium",
+                "text": "Total Views"
+               },
+               "componentSlots": {}
+              },
+              {
+               "blockName": "TextBlock",
+               "classes": [
+                "text-gray-700",
+                "font-normal"
+               ],
+               "componentId": "TextBlock-kybscex7b",
+               "componentName": "TextBlock",
+               "componentProps": {
+                "fontSize": "text-2xl",
+                "fontWeight": "font-normal",
+                "text": "{{ newsletter.doc.total_views }}",
+                "textColor": "text-gray-700"
+               },
+               "componentSlots": {}
+              }
+             ],
+             "componentId": "Container-zlyzyu913",
+             "componentName": "container",
+             "componentProps": {},
+             "componentSlots": {},
+             "originalElement": "div"
+            },
+            {
+             "baseStyles": {
+              "borderColor": "#F8F8F8",
+              "borderRadius": "5px",
+              "borderStyle": "solid",
+              "borderWidth": "1px",
+              "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px, rgba(0, 0, 0, 0.05) 0px 1px 3px 0px",
+              "display": "flex",
+              "flexDirection": "column",
+              "flexShrink": 0,
+              "height": "76px",
+              "marginBottom": "5px",
+              "marginLeft": "0px",
+              "marginRight": "0px",
+              "marginTop": "0px",
+              "padding": "10px",
+              "width": "190px"
+             },
+             "blockName": "Container",
+             "children": [
+              {
+               "blockName": "TextBlock",
+               "classes": [
+                "font-medium"
+               ],
+               "componentId": "TextBlock-tn79mz3z9",
+               "componentName": "TextBlock",
+               "componentProps": {
+                "fontSize": "text-base",
+                "fontWeight": "font-medium",
+                "text": "View Rate"
+               },
+               "componentSlots": {}
+              },
+              {
+               "blockName": "TextBlock",
+               "classes": [
+                "text-gray-700",
+                "font-normal"
+               ],
+               "componentId": "TextBlock-vyjcl6jai",
+               "componentName": "TextBlock",
+               "componentProps": {
+                "fontSize": "text-2xl",
+                "fontWeight": "font-normal",
+                "text": "{{ newsletter.doc.view_rate }}%",
+                "textColor": "text-gray-700"
+               },
+               "componentSlots": {}
+              }
+             ],
+             "componentId": "Container-4w8d97quq",
+             "componentName": "container",
+             "componentProps": {},
+             "componentSlots": {},
+             "originalElement": "div"
+            }
+           ],
+           "componentId": "FitContainer-o8ur3vnkq",
+           "componentName": "container",
+           "componentProps": {},
+           "componentSlots": {},
+           "originalElement": "div",
+           "visibilityCondition": "newsletter.doc"
+          },
+          {
+           "blockName": "FormControl",
+           "componentId": "FormControl-glfxk3tiv",
+           "componentName": "FormControl",
+           "componentProps": {
+            "autocomplete": "off",
+            "label": "Subject",
+            "modelValue": {
+             "$type": "variable",
+             "name": "formData.subject"
+            },
+            "placeholder": "What is this newsletter about?",
+            "required": false,
+            "size": "sm",
+            "type": "textarea"
+           },
+           "componentSlots": {}
+          },
+          {
+           "blockName": "MarkdownEditor",
+           "componentId": "MarkdownEditor-iduec9j23",
+           "componentName": "MarkdownEditor",
+           "componentProps": {
+            "label": "Content",
+            "modelValue": {
+             "$type": "variable",
+             "name": "formData.content"
+            },
+            "showPreview": true
+           },
+           "componentSlots": {},
+           "isCustomVueComponent": true
+          },
+          {
+           "blockName": "FormControl",
+           "componentId": "FormControl-rr0vdh8le",
+           "componentName": "FormControl",
+           "componentProps": {
+            "autocomplete": "off",
+            "description": "",
+            "label": "Schedule sending at a later time",
+            "modelValue": {
+             "$type": "variable",
+             "name": "formData.schedule_sending"
+            },
+            "type": "checkbox"
+           },
+           "componentSlots": {}
+          },
+          {
+           "blockName": "FormControl",
+           "componentId": "FormControl-lf8r03t54",
+           "componentName": "FormControl",
+           "componentProps": {
+            "autocomplete": "off",
+            "label": "Send Email At",
+            "modelValue": {
+             "$type": "variable",
+             "name": "formData.send_email_at"
+            },
+            "type": "datetime-local"
+           },
+           "componentSlots": {},
+           "visibilityCondition": "formData.schedule_sending == true"
+          }
+         ],
+         "componentId": "FitContainer-g4uynasas",
+         "componentName": "container",
+         "componentProps": {},
+         "componentSlots": {},
+         "originalElement": "div"
+        }
+       ],
+       "componentId": "Container-099i8n2si",
+       "componentName": "container",
+       "componentProps": {},
+       "componentSlots": {},
+       "originalElement": "div"
+      }
+     ],
+     "componentId": "Container-6pg85mlsx",
+     "componentName": "container",
+     "componentProps": {},
+     "componentSlots": {},
+     "originalElement": "div"
+    }
+   ],
+   "componentId": "root",
+   "componentName": "div",
+   "componentProps": {},
+   "componentSlots": {},
+   "originalElement": "body"
+  }
+ ],
+ "frappe_app": "brewletter",
+ "idx": 0,
+ "is_standard": 1,
+ "modified": "2026-10-13 11:20:57.031146",
+ "modified_by": "Administrator",
+ "name": "newsletter",
+ "owner": "Administrator",
+ "page_name": "page-fc57ccb1",
+ "page_title": "Newsletter",
+ "published": 1,
+ "resources": [
+  {
+   "auto": 1,
+   "document_type": "SD Newsletter",
+   "fetch_document_using_filters": 1,
+   "fields": "[]",
+   "filters": "{\"name\":[\"like\",\"{{ route.params.id }}\"]}",
+   "limit": 0,
+   "method": "GET",
+   "resource_name": "newsletter",
+   "resource_type": "Document",
+   "transform": "function transform(doc) { \n\treturn doc; \n}",
+   "whitelisted_methods": "[\"send_newsletter\"]"
+  }
+ ],
+ "route": "/newsletter/:id",
+ "studio_app": "brewletter",
+ "variables": [
+  {
+   "initial_value": "{\"subject\":\"\",\"content\":\"\",\"schedule_sending\":false,\"send_email_at\":\"\"}",
+   "variable_name": "formData",
+   "variable_type": "Object"
+  }
+ ]
+}

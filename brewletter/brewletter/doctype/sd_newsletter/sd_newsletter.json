@@ -1,0 +1,104 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:NL-{####}",
+ "creation": "2025-02-02 08:58:00.113988",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "subject",
+  "content",
+  "status",
+  "scheduled_sending_section",
+  "schedule_sending",
+  "send_email_at",
+  "metrics_tab",
+  "total_recipients",
+  "total_views",
+  "view_rate"
+ ],
+ "fields": [
+  {
+   "fieldname": "subject",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Subject"
+  },
+  {
+   "fieldname": "content",
+   "fieldtype": "Markdown Editor",
+   "label": "Content"
+  },
+  {
+   "fieldname": "scheduled_sending_section",
+   "fieldtype": "Section Break",
+   "label": "Scheduled Sending"
+  },
+  {
+   "default": "0",
+   "fieldname": "schedule_sending",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Schedule sending at a later time"
+  },
+  {
+   "fieldname": "send_email_at",
+   "fieldtype": "Datetime",
+   "label": "Send Email At"
+  },
+  {
+   "default": "Not Sent",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nSent\nNot Sent"
+  },
+  {
+   "fieldname": "metrics_tab",
+   "fieldtype": "Tab Break",
+   "label": "Metrics"
+  },
+  {
+   "fieldname": "total_recipients",
+   "fieldtype": "Int",
+   "label": "Total Recipients"
+  },
+  {
+   "fieldname": "total_views",
+   "fieldtype": "Int",
+   "label": "Total Views"
+  },
+  {
+   "fieldname": "view_rate",
+   "fieldtype": "Percent",
+   "label": "View Rate"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-06 12:39:39.052080",
+ "modified_by": "Administrator",
+ "module": "Brewletter",
+ "name": "SD Newsletter",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "subject"
+}

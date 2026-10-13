@@ -1,0 +1,672 @@
+{
+ "allow_guest": 0,
+ "blocks": [
+  {
+   "baseStyles": {
+    "alignItems": "center",
+    "display": "flex",
+    "flexDirection": "column",
+    "flexShrink": 0,
+    "flexWrap": "wrap",
+    "overflowX": "hidden",
+    "width": "inherit"
+   },
+   "blockName": "div",
+   "children": [
+    {
+     "baseStyles": {
+      "display": "flex",
+      "flexDirection": "row",
+      "flexGrow": 1,
+      "flexShrink": 0,
+      "height": "100vh",
+      "width": "100%"
+     },
+     "blockName": "Container",
+     "children": [
+      {
+       "blockName": "Sidebar",
+       "children": [
+        {
+         "componentId": "SidebarHeader-6400eee6e",
+         "componentName": "SidebarHeader",
+         "componentProps": {
+          "title": "Brewletter"
+         }
+        },
+        {
+         "baseStyles": {
+          "display": "flex",
+          "flex": "1",
+          "flexDirection": "column",
+          "minHeight": "0px",
+          "overflowY": "auto",
+          "padding": "4px 8px"
+         },
+         "children": [
+          {
+           "componentId": "SidebarItem-f58a89c4c",
+           "componentName": "SidebarItem",
+           "componentProps": {
+            "icon": "lucide-mail",
+            "label": "Newsletters",
+            "route": "/"
+           }
+          },
+          {
+           "componentId": "SidebarItem-db73e9fe1",
+           "componentName": "SidebarItem",
+           "componentProps": {
+            "icon": "lucide-user-check",
+            "label": "Subscribers",
+            "route": "/subscribers"
+           }
+          }
+         ],
+         "componentId": "container-9e5bf84e3",
+         "componentName": "container",
+         "originalElement": "div"
+        }
+       ],
+       "componentId": "Sidebar-3fbc632e8",
+       "componentName": "Sidebar"
+      },
+      {
+       "baseStyles": {
+        "display": "flex",
+        "flexDirection": "column",
+        "flexShrink": 1,
+        "height": "100%",
+        "minWidth": "0px",
+        "width": "100%"
+       },
+       "blockName": "Container",
+       "children": [
+        {
+         "baseStyles": {
+          "alignItems": "center",
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px, rgba(0, 0, 0, 0.05) 0px 1px 3px 0px",
+          "display": "flex",
+          "flexDirection": "row",
+          "flexShrink": 0,
+          "height": "49px",
+          "padding": "15px",
+          "width": "100%"
+         },
+         "blockName": "Container",
+         "children": [
+          {
+           "blockName": "TextBlock",
+           "classes": [
+            "font-normal"
+           ],
+           "componentId": "TextBlock-h9u3z2v3k",
+           "componentName": "TextBlock",
+           "componentProps": {
+            "fontSize": "text-2xl",
+            "fontWeight": "font-normal",
+            "text": "Subscribers"
+           },
+           "componentSlots": {}
+          },
+          {
+           "baseStyles": {
+            "marginBottom": "0px",
+            "marginLeft": "auto",
+            "marginRight": "0px",
+            "marginTop": "0px"
+           },
+           "blockName": "Button",
+           "componentEvents": {
+            "click": {
+             "action": "Run Script",
+             "api_endpoint": "",
+             "doctype": "",
+             "error_message": "",
+             "event": "click",
+             "fields": [],
+             "isEditing": false,
+             "page": "",
+             "script": "showDialog.value = true",
+             "success_message": "",
+             "url": ""
+            }
+           },
+           "componentId": "Button-38mnfzecl",
+           "componentName": "Button",
+           "componentProps": {
+            "iconLeft": "lucide-plus",
+            "label": "New",
+            "variant": "solid"
+           },
+           "componentSlots": {}
+          }
+         ],
+         "componentId": "Container-tetc007ke",
+         "componentName": "container",
+         "componentProps": {},
+         "componentSlots": {},
+         "originalElement": "div"
+        },
+        {
+         "baseStyles": {
+          "flexShrink": 1,
+          "height": "100%",
+          "padding": "15px",
+          "width": "100%"
+         },
+         "blockName": "FitContainer",
+         "children": [
+          {
+           "blockName": "ListView",
+           "componentId": "ListView-4247mgyix",
+           "componentName": "ListView",
+           "componentProps": {
+            "columns": [
+             {
+              "key": "full_name",
+              "label": "Full Name"
+             },
+             {
+              "key": "email",
+              "label": "Email"
+             },
+             {
+              "key": "status",
+              "label": "Status"
+             },
+             {
+              "key": "name",
+              "label": "ID"
+             }
+            ],
+            "rowKey": "name",
+            "rows": "{{ subscribers.data }}"
+           },
+           "componentSlots": {}
+          }
+         ],
+         "componentId": "FitContainer-g4uynasas",
+         "componentName": "container",
+         "componentProps": {},
+         "componentSlots": {},
+         "originalElement": "div"
+        }
+       ],
+       "componentId": "Container-099i8n2si",
+       "componentName": "container",
+       "componentProps": {},
+       "componentSlots": {},
+       "originalElement": "div"
+      }
+     ],
+     "componentId": "Container-6pg85mlsx",
+     "componentName": "container",
+     "componentProps": {},
+     "componentSlots": {},
+     "originalElement": "div"
+    },
+    {
+     "blockName": "Dialog",
+     "componentId": "Dialog-p9l68e96a",
+     "componentName": "Dialog",
+     "componentProps": {
+      "actions": [
+       {
+        "label": "Add",
+        "onClick": "() => call(\"frappe.client.insert\", { doc: { doctype: \"Subscriber\", ...newSubscriber.value } }).then(() => { subscribers.reload(); showDialog.value = false; newSubscriber.value = { full_name: \"\", email: \"\", status: \"Active\" }; toast.success(\"Subscriber added\") }).catch(() => toast.error(\"Could not add the subscriber\"))",
+        "variant": "solid"
+       }
+      ],
+      "dismissible": false,
+      "modelValue": {
+       "$type": "variable",
+       "name": "showDialog"
+      },
+      "size": "2xl",
+      "title": "Add Subscriber"
+     },
+     "componentSlots": {
+      "default": {
+       "parentBlockId": "Dialog-p9l68e96a",
+       "slotContent": [
+        {
+         "baseStyles": {
+          "display": "flex",
+          "flexDirection": "column",
+          "flexShrink": 0,
+          "gap": "8px",
+          "height": "fit-content",
+          "width": "100%"
+         },
+         "blockName": "Container",
+         "children": [
+          {
+           "blockName": "FormControl",
+           "componentId": "FormControl-ga7y4ktvu",
+           "componentName": "FormControl",
+           "componentProps": {
+            "autocomplete": "off",
+            "label": "Full Name",
+            "modelValue": {
+             "$type": "variable",
+             "name": "newSubscriber.full_name"
+            },
+            "type": "text"
+           },
+           "componentSlots": {}
+          },
+          {
+           "blockName": "FormControl",
+           "componentId": "FormControl-okq1o0cnf",
+           "componentName": "FormControl",
+           "componentProps": {
+            "autocomplete": "off",
+            "label": "Email",
+            "modelValue": {
+             "$type": "variable",
+             "name": "newSubscriber.email"
+            },
+            "placeholder": "jane@example.com",
+            "type": "email"
+           },
+           "componentSlots": {}
+          },
+          {
+           "blockName": "FormControl",
+           "componentId": "FormControl-m2kvb7fdi",
+           "componentName": "FormControl",
+           "componentProps": {
+            "autocomplete": "off",
+            "label": "Status",
+            "modelValue": {
+             "$type": "variable",
+             "name": "newSubscriber.status"
+            },
+            "options": [
+             "Active",
+             "Inactive"
+            ],
+            "type": "select"
+           },
+           "componentSlots": {}
+          }
+         ],
+         "componentId": "Container-wn1w8im6n",
+         "componentName": "container",
+         "componentProps": {},
+         "componentSlots": {},
+         "originalElement": "div",
+         "parentSlotName": "default"
+        }
+       ],
+       "slotId": "Dialog-p9l68e96a:default",
+       "slotName": "default"
+      }
+     }
+    }
+   ],
+   "componentId": "root",
+   "componentName": "div",
+   "componentProps": {},
+   "componentSlots": {},
+   "originalElement": "body"
+  }
+ ],
+ "creation": "2025-02-06 09:34:04.729080",
+ "docstatus": 0,
+ "doctype": "Studio Page",
+ "draft_blocks": [
+  {
+   "baseStyles": {
+    "alignItems": "center",
+    "display": "flex",
+    "flexDirection": "column",
+    "flexShrink": 0,
+    "flexWrap": "wrap",
+    "overflowX": "hidden",
+    "width": "inherit"
+   },
+   "blockName": "div",
+   "children": [
+    {
+     "baseStyles": {
+      "display": "flex",
+      "flexDirection": "row",
+      "flexGrow": 1,
+      "flexShrink": 0,
+      "height": "100vh",
+      "width": "100%"
+     },
+     "blockName": "Container",
+     "children": [
+      {
+       "blockName": "Sidebar",
+       "children": [
+        {
+         "componentId": "SidebarHeader-c9f85c95e",
+         "componentName": "SidebarHeader",
+         "componentProps": {
+          "title": "Brewletter"
+         }
+        },
+        {
+         "baseStyles": {
+          "display": "flex",
+          "flex": "1",
+          "flexDirection": "column",
+          "minHeight": "0px",
+          "overflowY": "auto",
+          "padding": "4px 8px"
+         },
+         "children": [
+          {
+           "componentId": "SidebarItem-8da2ba5fe",
+           "componentName": "SidebarItem",
+           "componentProps": {
+            "icon": "lucide-mail",
+            "label": "Newsletters",
+            "route": "/"
+           }
+          },
+          {
+           "componentId": "SidebarItem-c177bf32b",
+           "componentName": "SidebarItem",
+           "componentProps": {
+            "icon": "lucide-user-check",
+            "label": "Subscribers",
+            "route": "/subscribers"
+           }
+          }
+         ],
+         "componentId": "container-9a3f988b9",
+         "componentName": "container",
+         "originalElement": "div"
+        }
+       ],
+       "componentId": "Sidebar-04726a129",
+       "componentName": "Sidebar"
+      },
+      {
+       "baseStyles": {
+        "display": "flex",
+        "flexDirection": "column",
+        "flexShrink": 1,
+        "height": "100%",
+        "minWidth": "0px",
+        "width": "100%"
+       },
+       "blockName": "Container",
+       "children": [
+        {
+         "baseStyles": {
+          "alignItems": "center",
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px, rgba(0, 0, 0, 0.05) 0px 1px 3px 0px",
+          "display": "flex",
+          "flexDirection": "row",
+          "flexShrink": 0,
+          "height": "49px",
+          "padding": "15px",
+          "width": "100%"
+         },
+         "blockName": "Container",
+         "children": [
+          {
+           "blockName": "TextBlock",
+           "classes": [
+            "font-normal"
+           ],
+           "componentId": "TextBlock-h9u3z2v3k",
+           "componentName": "TextBlock",
+           "componentProps": {
+            "fontSize": "text-2xl",
+            "fontWeight": "font-normal",
+            "text": "Subscribers"
+           },
+           "componentSlots": {}
+          },
+          {
+           "baseStyles": {
+            "marginBottom": "0px",
+            "marginLeft": "auto",
+            "marginRight": "0px",
+            "marginTop": "0px"
+           },
+           "blockName": "Button",
+           "componentEvents": {
+            "click": {
+             "action": "Run Script",
+             "api_endpoint": "",
+             "doctype": "",
+             "error_message": "",
+             "event": "click",
+             "fields": [],
+             "isEditing": false,
+             "page": "",
+             "script": "showDialog.value = true",
+             "success_message": "",
+             "url": ""
+            }
+           },
+           "componentId": "Button-38mnfzecl",
+           "componentName": "Button",
+           "componentProps": {
+            "iconLeft": "lucide-plus",
+            "label": "New",
+            "variant": "solid"
+           },
+           "componentSlots": {}
+          }
+         ],
+         "componentId": "Container-tetc007ke",
+         "componentName": "container",
+         "componentProps": {},
+         "componentSlots": {},
+         "originalElement": "div"
+        },
+        {
+         "baseStyles": {
+          "flexShrink": 1,
+          "height": "100%",
+          "padding": "15px",
+          "width": "100%"
+         },
+         "blockName": "FitContainer",
+         "children": [
+          {
+           "blockName": "ListView",
+           "componentId": "ListView-4247mgyix",
+           "componentName": "ListView",
+           "componentProps": {
+            "columns": [
+             {
+              "key": "full_name",
+              "label": "Full Name"
+             },
+             {
+              "key": "email",
+              "label": "Email"
+             },
+             {
+              "key": "status",
+              "label": "Status"
+             },
+             {
+              "key": "name",
+              "label": "ID"
+             }
+            ],
+            "rowKey": "name",
+            "rows": "{{ subscribers.data }}"
+           },
+           "componentSlots": {}
+          }
+         ],
+         "componentId": "FitContainer-g4uynasas",
+         "componentName": "container",
+         "componentProps": {},
+         "componentSlots": {},
+         "originalElement": "div"
+        }
+       ],
+       "componentId": "Container-099i8n2si",
+       "componentName": "container",
+       "componentProps": {},
+       "componentSlots": {},
+       "originalElement": "div"
+      }
+     ],
+     "componentId": "Container-6pg85mlsx",
+     "componentName": "container",
+     "componentProps": {},
+     "componentSlots": {},
+     "originalElement": "div"
+    },
+    {
+     "blockName": "Dialog",
+     "componentId": "Dialog-p9l68e96a",
+     "componentName": "Dialog",
+     "componentProps": {
+      "actions": [
+       {
+        "label": "Add",
+        "onClick": "() => call(\"frappe.client.insert\", { doc: { doctype: \"Subscriber\", ...newSubscriber.value } }).then(() => { subscribers.reload(); showDialog.value = false; newSubscriber.value = { full_name: \"\", email: \"\", status: \"Active\" }; toast.success(\"Subscriber added\") }).catch(() => toast.error(\"Could not add the subscriber\"))",
+        "variant": "solid"
+       }
+      ],
+      "dismissible": false,
+      "modelValue": {
+       "$type": "variable",
+       "name": "showDialog"
+      },
+      "size": "2xl",
+      "title": "Add Subscriber"
+     },
+     "componentSlots": {
+      "default": {
+       "parentBlockId": "Dialog-p9l68e96a",
+       "slotContent": [
+        {
+         "baseStyles": {
+          "display": "flex",
+          "flexDirection": "column",
+          "flexShrink": 0,
+          "gap": "8px",
+          "height": "fit-content",
+          "width": "100%"
+         },
+         "blockName": "Container",
+         "children": [
+          {
+           "blockName": "FormControl",
+           "componentId": "FormControl-ga7y4ktvu",
+           "componentName": "FormControl",
+           "componentProps": {
+            "autocomplete": "off",
+            "label": "Full Name",
+            "modelValue": {
+             "$type": "variable",
+             "name": "newSubscriber.full_name"
+            },
+            "type": "text"
+           },
+           "componentSlots": {}
+          },
+          {
+           "blockName": "FormControl",
+           "componentId": "FormControl-okq1o0cnf",
+           "componentName": "FormControl",
+           "componentProps": {
+            "autocomplete": "off",
+            "label": "Email",
+            "modelValue": {
+             "$type": "variable",
+             "name": "newSubscriber.email"
+            },
+            "placeholder": "jane@example.com",
+            "type": "email"
+           },
+           "componentSlots": {}
+          },
+          {
+           "blockName": "FormControl",
+           "componentId": "FormControl-m2kvb7fdi",
+           "componentName": "FormControl",
+           "componentProps": {
+            "autocomplete": "off",
+            "label": "Status",
+            "modelValue": {
+             "$type": "variable",
+             "name": "newSubscriber.status"
+            },
+            "options": [
+             "Active",
+             "Inactive"
+            ],
+            "type": "select"
+           },
+           "componentSlots": {}
+          }
+         ],
+         "componentId": "Container-wn1w8im6n",
+         "componentName": "container",
+         "componentProps": {},
+         "componentSlots": {},
+         "originalElement": "div",
+         "parentSlotName": "default"
+        }
+       ],
+       "slotId": "Dialog-p9l68e96a:default",
+       "slotName": "default"
+      }
+     }
+    }
+   ],
+   "componentId": "root",
+   "componentName": "div",
+   "componentProps": {},
+   "componentSlots": {},
+   "originalElement": "body"
+  }
+ ],
+ "frappe_app": "brewletter",
+ "idx": 0,
+ "is_standard": 1,
+ "modified": "2026-10-13 11:20:57.031146",
+ "modified_by": "Administrator",
+ "name": "subscribers",
+ "owner": "Administrator",
+ "page_name": "page-1b71d48d",
+ "page_title": "Subscribers",
+ "published": 1,
+ "resources": [
+  {
+   "auto": 1,
+   "document_type": "Subscriber",
+   "fetch_document_using_filters": 0,
+   "fields": "[\"full_name\",\"email\",\"status\",\"name\"]",
+   "filters": "{}",
+   "limit": 0,
+   "method": "GET",
+   "resource_name": "subscribers",
+   "resource_type": "Document List",
+   "sort_field": "creation",
+   "sort_order": "DESC",
+   "whitelisted_methods": "[]"
+  }
+ ],
+ "route": "/subscribers",
+ "studio_app": "brewletter",
+ "variables": [
+  {
+   "initial_value": "false",
+   "variable_name": "showDialog",
+   "variable_type": "Boolean"
+  },
+  {
+   "initial_value": "{\"full_name\": \"\", \"email\": \"\", \"status\": \"Active\"}",
+   "variable_name": "newSubscriber",
+   "variable_type": "Object"
+  }
+ ]
+}
